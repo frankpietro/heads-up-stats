@@ -2,9 +2,11 @@ from const.default import *
 from random import randint
 
 
-def create_hand():
-    hand_array = []
-    for _ in range(board_length):
+def create_hand(arr=None):
+    if arr is None:
+        arr = []
+    hand_array = arr
+    for _ in range(len(arr), board_length):
         card = randint(0, suits*ranks - 1)
         while card in hand_array:
             card = randint(0, suits*ranks - 1)
@@ -87,3 +89,11 @@ def count_flush(hand):
         flush_array[h] += 1
 
     return flush_array
+
+
+def write_results(res, filename):
+    out = open(filename, 'w')
+    out.write(str(res[0]) + '\n')
+    out.write(str(res[1]) + '\n')
+    out.write(str(res[2]) + '\n')
+    out.close()
