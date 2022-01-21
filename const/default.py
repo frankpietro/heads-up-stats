@@ -1,0 +1,14 @@
+flop = 3
+turn = 1
+river = 1
+table = flop + turn + river
+players = 8
+own = 2
+suits = 4
+suit_symbols = ['S', 'C', 'D', 'H']
+ranks = 13
+ranks_symbols = ['2', '3', '4', '5', '6', '7', '8', '9', 'T', 'J', 'Q', 'K', 'A']
+straight_length = 5
+flush_length = 5
+board_length = own*players + table
+quads_length = 4
